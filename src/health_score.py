@@ -1,35 +1,37 @@
 import pandas as pd
 
-# Load dataset
-data = pd.read_csv("data/anomaly_detection_results.csv")
+# load anomaly detection data
+df = pd.read_csv("data/anomaly_detection_results.csv")
 
-# Normalize parameters
-temp_score = 1 - (data["temperature"] / data["temperature"].max())
-battery_score = data["battery"] / data["battery"].max()
-signal_score = data["signal_strength"] / data["signal_strength"].max()
-cpu_score = 1 - (data["cpu_load"] / data["cpu_load"].max())
+def normalize(value, min_val, max_val):
+    return (value - min_val) / (max_val - min_val)
 
-# Calculate health score
-data["health_score"] = (
-    0.3 * battery_score +
-    0.3 * signal_score +
-    0.2 * temp_score +
-    0.2 * cpu_score
+# normalize parameters
+df["temp_score"] = 1 - normalize(df["temperature"], 20, 60)
+df["battery_score"] = normalize(df["battery"], 20, 100)
+df["signal_score"] = normalize(df["signal_strength"], 40, 100)
+df["cpu_score"] = 1 - normalize(df["cpu_load"], 0, 100)
+
+# weighted health index
+df["health_score"] = (
+    0.3 * df["temp_score"] +
+    0.3 * df["battery_score"] +
+    0.2 * df["signal_score"] +
+    0.2 * df["cpu_score"]
 )
 
-# System status classification
-def classify_health(score):
-    if score > 0.7:
+# system status
+def system_status(score):
+    if score > 0.75:
         return "Healthy"
-    elif score > 0.4:
+    elif score > 0.5:
         return "Warning"
     else:
         return "Critical"
 
-data["system_status"] = data["health_score"].apply(classify_health)
+df["system_status"] = df["health_score"].apply(system_status)
 
-# Save results
-data.to_csv("data/system_health_results.csv", index=False)
+df.to_csv("data/system_health_results.csv", index=False)
 
-print("System health evaluation completed!")
-print(data[["time","health_score","system_status"]].tail())
+print("Advanced health evaluation completed!")
+print(df[["health_score","system_status"]].tail())

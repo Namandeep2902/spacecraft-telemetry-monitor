@@ -46,6 +46,20 @@ st.pyplot(fig3)
 # Show raw data
 st.subheader("Telemetry Data Table")
 st.dataframe(data)
+
+faults = pd.read_csv("logs/fault_log.csv")
+
+st.subheader("Recent Fault Events")
+
+st.dataframe(faults.tail(10))
+if faults.shape[0] > 0:
+
+    st.error("⚠ Anomaly detected in spacecraft telemetry!")
+
+    latest_fault = faults.tail(1)
+
+    st.write("Latest Fault:")
+    st.dataframe(latest_fault)
 # ---------------------------
 # Live Anomaly Alerts
 # ---------------------------
