@@ -1,4 +1,7 @@
 **Spacecraft Telemetry Monitoring System**
+Project Description:- 
+This project simulates spacecraft telemetry monitoring by analyzing sensor data such as temperature, battery level, and communication signal strength. 
+The system detects anomalies using machine learning techniques and visualizes subsystem health through an interactive dashboard.
 1. Overview:
 
 This project implements a telemetry monitoring dashboard for analyzing spacecraft system data and detecting anomalies in subsystem behavior. Spacecraft continuously generate telemetry data from onboard sensors such as temperature sensors, power systems, and communication modules. Monitoring this data is essential to ensure spacecraft stability and mission safety.
