@@ -1,14 +1,15 @@
 **Spacecraft Telemetry Monitoring System**
 
-Project Description:- 
+**Project Description:- **
 This project simulates spacecraft telemetry monitoring by analyzing sensor data such as temperature, battery level, and communication signal strength. 
 The system detects anomalies using machine learning techniques and visualizes subsystem health through an interactive dashboard.
-1. Overview:
+
+**1. Overview:**
 
 This project implements a telemetry monitoring dashboard for analyzing spacecraft system data and detecting anomalies in subsystem behavior. Spacecraft continuously generate telemetry data from onboard sensors such as temperature sensors, power systems, and communication modules. Monitoring this data is essential to ensure spacecraft stability and mission safety.
 The system processes telemetry data, identifies abnormal patterns, and presents the results through an interactive dashboard. It allows users to visualize subsystem performance, monitor system health, and track fault events.
 
-2. Objectives:
+**2. Objectives:**
 
 The primary objectives of this project are:
 
@@ -22,7 +23,7 @@ Visualize telemetry trends and detected anomalies
 
 Maintain a record of detected fault events
 
-3. Features:
+**3. Features:**
  
 Telemetry data visualization for temperature, battery level, and signal strength
 
@@ -36,7 +37,7 @@ Live alert panel highlighting detected issues
 
 Interactive dashboard built using Streamlit
 
-4. Technologies Used:
+**4. Technologies Used:**
 
 Python
 
@@ -52,7 +53,7 @@ Matplotlib – additional plotting support
 
 GitHub – version control and project management
 
-5. Project Structure:
+**5. Project Structure:**
    
 spacecraft-telemetry-monitor
 
@@ -86,7 +87,8 @@ spacecraft-telemetry-monitor
 
 └── README.md
 
-7. Dashboard Components:
+
+**6. Dashboard Components:**
 
 The dashboard provides the following monitoring components:
 
@@ -100,7 +102,8 @@ Fault Timeline -   Visualizes when anomalies occurred during telemetry monitorin
 
 Live Alerts -      Highlights critical subsystem issues detected by the system.
 
-7. Running the Project Locally:
+
+**7. Running the Project Locally:**
 
 Clone the repository - git clone https://github.com/Namandeep2902/spacecraft-telemetry-monitor.git
 
@@ -110,13 +113,13 @@ Install required dependencies - pip install -r requirements.txt
 
 Run the dashboard -  streamlit run dashboard/app.py
 
-8. Live Application: 
+**8. Live Application: **
 
 The deployed dashboard can be accessed here:
 
 https://spacecraft-telemetry-monitorgit.streamlit.app/
 
-9. Future Improvements:
+**9. Future Improvements:**
 
 Possible improvements for the system include -
 
@@ -130,6 +133,6 @@ Automated alert notifications
 
 Historical telemetry analytics
 
-10. Author:
+**10. Author:**
 
 Developed as part of a telemetry monitoring and anomaly detection project using Python and machine learning techniques.
