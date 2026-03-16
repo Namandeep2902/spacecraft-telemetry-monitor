@@ -1,6 +1,6 @@
 **Spacecraft Telemetry Monitoring System**
 
-**Project Description:- **
+**Project Description:-**
 This project simulates spacecraft telemetry monitoring by analyzing sensor data such as temperature, battery level, and communication signal strength. 
 The system detects anomalies using machine learning techniques and visualizes subsystem health through an interactive dashboard.
 
@@ -113,7 +113,7 @@ Install required dependencies - pip install -r requirements.txt
 
 Run the dashboard -  streamlit run dashboard/app.py
 
-**8. Live Application: **
+**8. Live Application:**
 
 The deployed dashboard can be accessed here:
 
